@@ -1,0 +1,9 @@
+
+[Event "Sample"]
+[Site "ChessCheck.ai"]
+[Date "2025.08.01"]
+[White "Player A"]
+[Black "Player B"]
+[Result "1-0"]
+
+1. e4 {+0.20} e5 {+0.10} 2. Nf3 {+0.25} Nc6 {+0.15} 3. Bb5 {+0.30} a6 {+0.25} 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d5?! {-0.10} 9. exd5 Qxd5? {-0.45} 10. d4! {+0.80} e4 11. Ne5 Nxe5 12. dxe5 Qxe5 13. Be3 Ng4?? 14. g3 Qh5 15. h4 Bxh4 16. Qd5 Bg5 17. Qxa8 Qh2+ 18. Kf1 Bxe3 19. Bxf7+ Kh8 20. Qxe4 Qxf2# 0-1

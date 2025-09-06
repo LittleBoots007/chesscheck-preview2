@@ -1,1 +1,32 @@
-<!doctype html><html><head><meta charset='utf-8'><title>Access</title></head><body><h1>Private Preview</h1><p>Password page. Use: <b>ccdemo</b></p></body></html>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Private Preview — ChessCheck.ai</title>
+<link rel="stylesheet" href="assets/site.css">
+<script>
+const PASS_VALUE = "ccdemo";
+function enter(e){
+  e.preventDefault();
+  const v = document.getElementById('pw').value.trim();
+  const msg = document.getElementById('msg');
+  if(v===PASS_VALUE){
+    sessionStorage.setItem("cc_preview_pass_ok","1");
+    const target = sessionStorage.getItem("cc_preview_target") || "index.html";
+    window.location.href = target;
+  }else{
+    msg.textContent = "Incorrect password. Try again.";
+  }
+}
+</script>
+</head><body>
+<div class="nav"><div class="logo"><div class="mark"></div>ChessCheck.ai</div></div>
+<section class="hero">
+  <h1>Private Preview</h1>
+  <p class="sub">This demo is for early access only. Enter the password to continue.</p>
+  <form onsubmit="enter(event)" style="max-width:420px;margin:0 auto">
+    <input id="pw" class="input" type="password" placeholder="Password">
+    <div class="ctas" style="margin-top:12px"><button class="btn primary" type="submit">Enter</button></div>
+    <div id="msg" style="margin-top:8px;color:#ffb3b3"></div>
+  </form>
+</section>
+<div class="footer"><div class="grid2"><div><small>Need access? Contact hello@chesscheck.ai</small></div></div></div>
+</body></html>
