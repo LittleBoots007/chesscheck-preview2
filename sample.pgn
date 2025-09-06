@@ -1,9 +1,2 @@
-
-[Event "Sample"]
-[Site "ChessCheck.ai"]
-[Date "2025.08.01"]
-[White "Player A"]
-[Black "Player B"]
-[Result "1-0"]
-
-1. e4 {+0.20} e5 {+0.10} 2. Nf3 {+0.25} Nc6 {+0.15} 3. Bb5 {+0.30} a6 {+0.25}
+[Event 'Sample']
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6
