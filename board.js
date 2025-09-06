@@ -1,1 +1,1 @@
-console.log('Board renderer placeholder - will render FEN here later');
+console.log('Board renderer placeholder - FEN parser later');

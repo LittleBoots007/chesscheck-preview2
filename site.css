@@ -1,1 +1,8 @@
-body{background:#0c1324;color:#e9eef7;font-family:Arial,sans-serif;} h1,h2{color:#3bff7b;} a{color:#3bff7b;text-decoration:none;} .nav{background:#0e1830;padding:12px;display:flex;gap:12px;} .nav a{color:#e9eef7;} .section{padding:30px;max-width:900px;margin:auto;} .btn{background:#3bff7b;color:#02140a;padding:10px 14px;border-radius:6px;}
+
+body { background:#0c1324; color:#e9eef7; font-family:Arial,sans-serif; margin:0; }
+h1,h2 { color:#3bff7b; }
+a { color:#3bff7b; text-decoration:none; }
+.nav { background:#0e1830; padding:12px; display:flex; gap:12px; }
+.nav a { color:#e9eef7; }
+.section { padding:30px; max-width:900px; margin:auto; }
+.btn { background:#3bff7b; color:#02140a; padding:10px 14px; border-radius:6px; }
