@@ -3,7 +3,13 @@
 <title>Demo — ChessCheck.ai</title>
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/gate.js"></script>
+<script src="assets/board.js"></script>
 <script>
+function renderFen(){
+  const fen = document.getElementById('fen').value.trim();
+  if(!fen) return;
+  CCBoard.renderBoard(document.getElementById('board'), fen);
+}
 function submitDemo(e){
   e.preventDefault();
   document.getElementById('result').innerHTML = `
@@ -31,32 +37,42 @@ function submitDemo(e){
 
 <section class="section">
   <h2>Demo</h2>
-  <div class="grid2">
-    <form class="card" onsubmit="submitDemo(event)">
-      <label>Upload PGN</label>
-      <input class="input" type="file" accept=".pgn">
-      <label style="margin-top:12px">Or paste FEN</label>
-      <input class="input" type="text" placeholder="FEN string">
-      <label style="margin-top:12px">Engine</label>
-      <select class="input">
-        <option>Stockfish (CPU)</option>
-        <option>Lc0 (GPU)</option>
-      </select>
-      <label style="margin-top:12px">Depth</label>
-      <select class="input">
-        <option>Fast</option>
-        <option>Deep</option>
-        <option>Extreme</option>
-      </select>
-      <div style="margin-top:14px">
-        <button class="btn primary" type="submit">Submit (preview)</button>
+  <div class="boardwrap">
+    <div>
+      <div id="board" class="board"></div>
+      <div style="margin-top:10px">
+        <label>Paste FEN then click Render</label>
+        <input id="fen" class="input" placeholder="e.g. rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1">
+        <div class="ctas" style="justify-content:flex-start;margin-top:10px">
+          <button class="btn primary" onclick="renderFen()">Render position</button>
+        </div>
       </div>
-      <small>Payments disabled in preview.</small>
-    </form>
-    <div id="result" class="preview card">
-      <strong>What you’ll get</strong>
-      <p>An annotated PGN and a visual PDF report with evaluation graph, best-move suggestions and blunder highlights.</p>
-      <p><a href="assets/sample.pgn" download>Download sample PGN</a> · <a href="assets/sample-report.pdf" target="_blank">View sample PDF</a></p>
+    </div>
+    <div class="moves">
+      <form class="card" onsubmit="submitDemo(event)">
+        <label>Upload PGN</label>
+        <input class="input" type="file" accept=".pgn">
+        <label style="margin-top:12px">Engine</label>
+        <select class="input">
+          <option>Stockfish (CPU)</option>
+          <option>Lc0 (GPU)</option>
+        </select>
+        <label style="margin-top:12px">Depth</label>
+        <select class="input">
+          <option>Fast</option>
+          <option>Deep</option>
+          <option>Extreme</option>
+        </select>
+        <div style="margin-top:14px">
+          <button class="btn primary" type="submit">Submit (preview)</button>
+        </div>
+        <small>Payments disabled in preview.</small>
+      </form>
+      <div id="result" class="preview card" style="margin-top:12px">
+        <strong>What you’ll get</strong>
+        <p>An annotated PGN and a visual PDF report with evaluation graph, best-move suggestions and blunder highlights.</p>
+        <p><a href="assets/sample.pgn" download>Download sample PGN</a> · <a href="assets/sample-report.pdf" target="_blank">View sample PDF</a></p>
+      </div>
     </div>
   </div>
   <div class="card notice" style="margin-top:16px">
@@ -77,4 +93,5 @@ function submitDemo(e){
     </div>
   </div>
 </div>
+
 </body></html>
